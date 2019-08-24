@@ -15,44 +15,36 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<org.carbonrom.setupwizard.widget.ScrimInsetsFrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/root"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    app:insetForeground="@android:color/transparent">
+    android:orientation="vertical"
+    android:background="@color/primary">
 
-    <LinearLayout
+    <include layout="@layout/header" />
+
+    <FrameLayout
+        android:id="@+id/animContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/finish_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/primary">
+        android:layout_height="wrap_content"
+        android:layout_above="@id/navigation_bar"
+        android:paddingLeft="@dimen/content_margin_left"
+        android:paddingRight="@dimen/content_margin_left"
+        android:paddingBottom="164dp"
+        android:textSize="18sp"
+        android:text="@string/finish_summary" 
+        style="PageSummaryText"/>
 
-        <ImageView
-            android:id="@+id/brand_logo"
-            android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_weight="1"
-            android:src="@drawable/logo"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:gravity="center"
-            android:padding="@dimen/content_margin_left"/>
-
-
-        <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
-                  android:id="@+id/navigation_bar"
-                  style="@style/setup_wizard_navbar_style" />
-
-    </LinearLayout>
-
-    <ImageView android:id="@+id/reveal"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:background="@drawable/reveal"
-               android:visibility="invisible"/>
-
-</org.carbonrom.setupwizard.widget.ScrimInsetsFrameLayout>
+    <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
+              android:id="@+id/navigation_bar"
+              android:gravity="bottom"
+              android:layout_alignParentBottom="true"
+              style="@style/setup_wizard_navbar_style" />
+</RelativeLayout>

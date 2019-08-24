@@ -31,7 +31,7 @@
     <string name="ok">OK</string>
     <string name="loading">Just a sec\u2026</string>
 
-    <string name="setup_complete">Setup is complete</string>
+    <string name="setup_complete">You\'re all set!</string>
     <string name="setup_welcome">Welcome</string>
     <string name="setup_locale">Language</string>
     <string name="setup_wifi">Select Wi-Fi</string>
@@ -44,6 +44,7 @@
     <string name="setup_current_time">Current time</string>
 
     <string name="welcome_summary">You must be new! Before you can start using CarbonROM, we need to get some of the basics set up to personalize your experience. Start by selecting your language below.</string>
+    <string name="finish_summary">Now that your device is all set up, you can start using your device and experience everything CarbonROM has to offer. Enjoy!</string>
 
     <string name="sim_missing_summary" product="tablet">A SIM card has not been detected in your tablet. To insert a SIM card, read the instructions that came with your device.</string>
     <string name="sim_missing_summary" product="default">A SIM card has not been detected in your phone. To insert a SIM card, read the instructions that came with your device.</string>

@@ -48,7 +48,7 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.ImageView;
 
-import com.android.setupwizardlib.util.WizardManagerHelper;
+import com.google.android.setupcompat.util.WizardManagerHelper;
 
 import org.carbonrom.setupwizard.util.EnableAccessibilityController;
 

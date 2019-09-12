@@ -49,10 +49,11 @@
             android:text="@string/os_name"
             android:textSize="60sp"/>
 
-        <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
-            android:id="@+id/navigation_bar"
-            style="@style/setup_wizard_navbar_style" />
-<!--            android:layout_below="@id/brand_name"
-            android:layout_alignParentBottom="true"-->
+    <com.google.android.setupdesign.view.NavigationBar
+        android:id="@+id/navigation_bar"
+        style="@style/SudNavBarTheme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sud_navbar_height" 
+        android:layout_alignParentBottom="true" />
     </RelativeLayout>
 </LinearLayout>

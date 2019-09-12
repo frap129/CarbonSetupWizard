@@ -28,7 +28,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.android.setupwizardlib.util.WizardManagerHelper;
+import com.google.android.setupcompat.util.WizardManagerHelper;
 
 import org.carbonrom.setupwizard.util.SetupWizardUtils;
 import org.carbonrom.setupwizard.wizardmanager.WizardManager;

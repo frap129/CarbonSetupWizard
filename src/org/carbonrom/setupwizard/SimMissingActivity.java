@@ -20,7 +20,7 @@ package org.carbonrom.setupwizard;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.android.setupwizardlib.util.ResultCodes;
+import com.google.android.setupcompat.util.ResultCodes;
 
 import org.carbonrom.setupwizard.util.PhoneMonitor;
 

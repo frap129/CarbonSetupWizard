@@ -19,7 +19,6 @@ package org.carbonrom.setupwizard;
 
 import static org.carbonrom.setupwizard.SetupWizardApp.DISABLE_NAV_KEYS;
 import static org.carbonrom.setupwizard.SetupWizardApp.KEY_BUTTON_BACKLIGHT;
-import static org.carbonrom.setupwizard.SetupWizardApp.KEY_PRIVACY_GUARD;
 import static org.carbonrom.setupwizard.SetupWizardApp.KEY_SEND_METRICS;
 import static org.carbonrom.setupwizard.SetupWizardApp.LOGV;
 

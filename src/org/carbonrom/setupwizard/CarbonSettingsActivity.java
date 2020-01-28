@@ -51,7 +51,7 @@ public class CarbonSettingsActivity extends BaseSetupWizardActivity {
 
     public static final String TAG = CarbonSettingsActivity.class.getSimpleName();
 
-    public static final String PRIVACY_POLICY_URI = "http://lineageos.org/legal";
+    public static final String PRIVACY_POLICY_URI = "http://legal.carbonrom.org";
 
     private SetupWizardApp mSetupWizardApp;
 

@@ -28,7 +28,9 @@
         android:id="@+id/animContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:layout_above="@id/finish_text"
+        android:paddingTop="80dp"/>
 
     <TextView
         android:id="@+id/finish_text"
@@ -37,9 +39,9 @@
         android:layout_above="@id/navigation_bar"
         android:paddingLeft="@dimen/content_margin_left"
         android:paddingRight="@dimen/content_margin_left"
-        android:paddingBottom="164dp"
+        android:paddingBottom="80dp"
         android:textSize="18sp"
-        android:text="@string/finish_summary" 
+        android:text="@string/finish_summary"
         style="PageSummaryText"/>
 
         <com.google.android.setupdesign.view.NavigationBar

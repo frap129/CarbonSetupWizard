@@ -19,8 +19,10 @@ package org.carbonrom.setupwizard;
 
 import static org.carbonrom.setupwizard.SetupWizardApp.DISABLE_NAV_KEYS;
 import static org.carbonrom.setupwizard.SetupWizardApp.KEY_SEND_METRICS;
+import static org.carbonrom.setupwizard.SetupWizardApp.KEY_DARK_THEME;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -57,6 +59,7 @@ public class CarbonSettingsActivity extends BaseSetupWizardActivity {
 
     private CheckBox mMetrics;
     private CheckBox mNavKeys;
+    private CheckBox mDarkTheme;
 
     private boolean mSupportsKeyDisabler = false;
 
@@ -71,6 +74,18 @@ public class CarbonSettingsActivity extends BaseSetupWizardActivity {
         mNavKeys.setChecked(checked);
         mSetupWizardApp.getSettingsBundle().putBoolean(DISABLE_NAV_KEYS, checked);
     };
+
+    private View.OnClickListener mCustomThemeClickListener = view -> {
+        this.startActivity(new Intent().setComponent(new ComponentName("com.android.wallpaper",
+            "com.android.customization.picker.CustomizationPickerActivity")));
+    };
+
+    private View.OnClickListener mDarkThemeClickListener = view -> {
+        boolean checked = !mDarkTheme.isChecked();
+        mDarkTheme.setChecked(checked);
+        mSetupWizardApp.getSettingsBundle().putBoolean(KEY_DARK_THEME, checked);
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,11 +129,18 @@ public class CarbonSettingsActivity extends BaseSetupWizardActivity {
         metrics.setText(metricsSpan);
         mMetrics = (CheckBox) findViewById(R.id.enable_metrics_checkbox);
 
-        View navKeysRow = findViewById(R.id.nav_keys);
+        View customThemeRow = findViewById(R.id.customize_theme);
+        customThemeRow.setOnClickListener(mCustomThemeClickListener);
+
+        View darkThemeRow = findViewById(R.id.dark_theme);
+        darkThemeRow.setOnClickListener(mDarkThemeClickListener);
+        mDarkTheme = (CheckBox) findViewById(R.id.enable_dark_theme);
+
+        /*View navKeysRow = findViewById(R.id.nav_keys);
         navKeysRow.setOnClickListener(mNavKeysClickListener);
         mNavKeys = (CheckBox) findViewById(R.id.nav_keys_checkbox);
         mSupportsKeyDisabler = isKeyDisablerSupported(this);
-        /*if (mSupportsKeyDisabler) {
+        if (mSupportsKeyDisabler) {
             mNavKeys.setChecked(LineageSettings.System.getIntForUser(getContentResolver(),
                     LineageSettings.System.FORCE_SHOW_NAVBAR, 0, UserHandle.USER_CURRENT) != 0);
         } else {

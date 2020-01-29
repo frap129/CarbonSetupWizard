@@ -81,6 +81,9 @@
     <string name="services_help_improve_cm">Help improve <xliff:g id="name" example="CarbonROM">%s</xliff:g></string>
     <string name="services_metrics_label"><xliff:g id="name" example="Help improve CarbonROM">%1$s</xliff:g> by automatically sending diagnostic and usage data to CarbonROM. This information can’t be used to identify you and lends a hand to teams working on things like battery life, app performance, and new <xliff:g id="name" example="LineageOS">%2$s</xliff:g> features.</string>
     <string name="services_os_nav_keys_label"><b>Use on screen navigation keys</b> instead of hardware keys.</string>
+    <string name="services_dark_theme"><b>Use the dark theme</b> all the time.</string>
+    <string name="services_customize_theme"><b>Customize your theme</b> by choosing colors and icons.</string>
+
 
     <string name="setup_unlock">Unlock</string>
     <string name="setup_device_locked">This device has been locked by the user.</string>

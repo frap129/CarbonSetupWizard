@@ -87,7 +87,77 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/customize_theme"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/location_margin_left"
+                    android:paddingRight="@dimen/content_margin_right"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/customize_theme_summary"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="15sp"
+                        android:lineSpacingExtra="@dimen/setup_line_spacing"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="42dp"
+                        android:layout_marginRight="@dimen/location_text_margin_right"
+                        android:paddingTop="@dimen/content_margin_bottom"
+                        android:paddingBottom="@dimen/content_margin_bottom"
+                        android:text="@string/services_customize_theme"/>
+
+                    <ImageView
+                        android:id="@+id/customize_theme_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_chevron_right_dark"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dark_theme"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/location_margin_left"
+                    android:paddingRight="@dimen/content_margin_right"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+
+                    <CheckBox
+                        android:id="@+id/enable_dark_theme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:duplicateParentState="true"
+                        android:clickable="false"/>
+
+                    <TextView
+                        android:id="@+id/enable_dark_theme_summary"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="15sp"
+                        android:lineSpacingExtra="@dimen/setup_line_spacing"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/location_text_margin_left"
+                        android:layout_marginRight="@dimen/location_text_margin_right"
+                        android:paddingTop="@dimen/content_margin_bottom"
+                        android:paddingBottom="@dimen/content_margin_bottom"
+                        android:text="@string/services_dark_theme"/>
+
+                </LinearLayout>
+
                 <!-- Checkbox for using on-screen nav keys -->
+                <!--
                 <LinearLayout
                     android:id="@+id/nav_keys"
                     android:orientation="horizontal"
@@ -121,7 +191,7 @@
                         android:paddingBottom="@dimen/content_margin_bottom"
                         android:text="@string/services_os_nav_keys_label"/>
 
-                </LinearLayout>
+                </LinearLayout>-->
 
             </LinearLayout>
         </ScrollView>

@@ -20,11 +20,13 @@ package org.carbonrom.setupwizard;
 import static org.carbonrom.setupwizard.SetupWizardApp.DISABLE_NAV_KEYS;
 import static org.carbonrom.setupwizard.SetupWizardApp.KEY_BUTTON_BACKLIGHT;
 import static org.carbonrom.setupwizard.SetupWizardApp.KEY_SEND_METRICS;
+import static org.carbonrom.setupwizard.SetupWizardApp.KEY_DARK_THEME;
 import static org.carbonrom.setupwizard.SetupWizardApp.LOGV;
 
 import android.animation.Animator;
 import android.app.Activity;
 import android.app.WallpaperManager;
+import android.app.UiModeManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -165,10 +167,21 @@ public class FinishActivity extends BaseSetupWizardActivity {
         completeSetup();
     }
 
+    private void handleDarkTheme(SetupWizardApp setupWizardApp) {
+        Bundle mData = setupWizardApp.getSettingsBundle();
+        if (mData != null && mData.containsKey(KEY_DARK_THEME)) {
+            UiModeManager mUiModeManager = this.getSystemService(UiModeManager.class);
+            mUiModeManager.setNightMode(mData.getBoolean(KEY_DARK_THEME)
+                    ? UiModeManager.MODE_NIGHT_YES
+                    : UiModeManager.MODE_NIGHT_NO);
+        }
+    }
+
     private void completeSetup() {
         if (mEnableAccessibilityController != null) {
             mEnableAccessibilityController.onDestroy();
         }
+        handleDarkTheme(mSetupWizardApp);
         final WallpaperManager wallpaperManager =
                 WallpaperManager.getInstance(mSetupWizardApp);
         wallpaperManager.forgetLoadedWallpaper();

@@ -37,6 +37,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
+import android.provider.Settings.Secure;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
@@ -68,6 +69,8 @@ public class FinishActivity extends BaseSetupWizardActivity {
     FrameLayout mContent;
     final static int SOLID_BGCOLOR = 0xFF1F1F1F;
     final static int CLEAR_BGCOLOR = 0x00000000;
+
+    static final String STATS_COLLECTION = "stats_collection";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,11 +180,22 @@ public class FinishActivity extends BaseSetupWizardActivity {
         }
     }
 
+    private void handleSendMetrics(SetupWizardApp setupWizardApp) {
+        Bundle mData = setupWizardApp.getSettingsBundle();
+        if (mData != null && mData.containsKey(KEY_DARK_THEME)) {
+            Secure.putInt(this.getContentResolver(), STATS_COLLECTION,
+                    mData.getBoolean(KEY_SEND_METRICS) ? 1 : 0);
+        }
+    }
+
+
+
     private void completeSetup() {
         if (mEnableAccessibilityController != null) {
             mEnableAccessibilityController.onDestroy();
         }
         handleDarkTheme(mSetupWizardApp);
+        handleSendMetrics(mSetupWizardApp);
         final WallpaperManager wallpaperManager =
                 WallpaperManager.getInstance(mSetupWizardApp);
         wallpaperManager.forgetLoadedWallpaper();

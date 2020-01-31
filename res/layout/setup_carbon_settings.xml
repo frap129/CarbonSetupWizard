@@ -51,9 +51,8 @@
                     android:text="@string/services_explanation"
                     android:clickable="true"/>
 
-                <!-- Whether or not to enable metrics -->
                 <LinearLayout
-                    android:id="@+id/metrics"
+                    android:id="@+id/system_nav"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -62,28 +61,27 @@
                     android:background="?android:attr/selectableItemBackground"
                     android:clickable="true">
 
-
-                    <CheckBox
-                        android:id="@+id/enable_metrics_checkbox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="top"
-                        android:layout_marginTop="5dp"
-                        android:duplicateParentState="true"
-                        android:clickable="false"/>
-
                     <TextView
-                        android:id="@+id/enable_metrics_summary"
+                        android:id="@+id/system_nav_summary"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="15sp"
                         android:lineSpacingExtra="@dimen/setup_line_spacing"
-                        android:gravity="top"
-                        android:layout_marginLeft="@dimen/location_text_margin_left"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="42dp"
                         android:layout_marginRight="@dimen/location_text_margin_right"
+                        android:paddingTop="@dimen/content_margin_bottom"
                         android:paddingBottom="@dimen/content_margin_bottom"
-                        android:text="@string/services_metrics_label"/>
+                        android:text="@string/services_system_nav"/>
+
+                    <ImageView
+                        android:id="@+id/system_nav_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_chevron_right_dark"/>
+
 
                 </LinearLayout>
 
@@ -117,7 +115,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_chevron_right_dark"/>
-
 
                 </LinearLayout>
 
@@ -193,6 +190,41 @@
 
                 </LinearLayout>-->
 
+                <!-- Whether or not to enable metrics -->
+                <LinearLayout
+                    android:id="@+id/metrics"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/location_margin_left"
+                    android:paddingRight="@dimen/content_margin_right"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true">
+
+
+                    <CheckBox
+                        android:id="@+id/enable_metrics_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="5dp"
+                        android:duplicateParentState="true"
+                        android:clickable="false"/>
+
+                    <TextView
+                        android:id="@+id/enable_metrics_summary"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="15sp"
+                        android:lineSpacingExtra="@dimen/setup_line_spacing"
+                        android:gravity="top"
+                        android:layout_marginLeft="@dimen/location_text_margin_left"
+                        android:layout_marginRight="@dimen/location_text_margin_right"
+                        android:paddingBottom="@dimen/content_margin_bottom"
+                        android:text="@string/services_metrics_label"/>
+
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </FrameLayout>

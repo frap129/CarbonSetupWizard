@@ -86,6 +86,10 @@ public class CarbonSettingsActivity extends BaseSetupWizardActivity {
         mSetupWizardApp.getSettingsBundle().putBoolean(KEY_DARK_THEME, checked);
     };
 
+    private View.OnClickListener mSystemNavClickListener = view -> {
+        this.startActivity(new Intent().setComponent(new ComponentName("com.android.settings",
+                "com.android.settings.Settings$SystemNavActivity")));
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +132,9 @@ public class CarbonSettingsActivity extends BaseSetupWizardActivity {
         TextView metrics = (TextView) findViewById(R.id.enable_metrics_summary);
         metrics.setText(metricsSpan);
         mMetrics = (CheckBox) findViewById(R.id.enable_metrics_checkbox);
+
+        View systemNavRow = findViewById(R.id.system_nav);
+        systemNavRow.setOnClickListener(mSystemNavClickListener);
 
         View customThemeRow = findViewById(R.id.customize_theme);
         customThemeRow.setOnClickListener(mCustomThemeClickListener);

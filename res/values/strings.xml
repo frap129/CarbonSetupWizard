@@ -83,6 +83,7 @@
     <string name="services_os_nav_keys_label"><b>Use on screen navigation keys</b> instead of hardware keys.</string>
     <string name="services_dark_theme"><b>Use the dark theme</b> all the time.</string>
     <string name="services_customize_theme"><b>Customize your theme</b> by choosing colors and icons.</string>
+    <string name="services_system_nav"><b>Change your navigation style</b> to choose how you use your device.</string>
 
 
     <string name="setup_unlock">Unlock</string>

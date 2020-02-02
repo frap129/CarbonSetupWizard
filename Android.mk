@@ -9,6 +9,7 @@ LOCAL_PACKAGE_NAME := CarbonSetupWizard
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_OVERRIDES_PACKAGES := Provision
+LOCAL_REQUIRED_MODULES := privapp_whitelist_org.carbonrom.setupwizard
 
 LOCAL_PRIVATE_PLATFORM_APIS := true
 

@@ -15,41 +15,51 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/primary">
 
-    <include layout="@layout/header" />
+    <include layout="@layout/header"
+        android:id="@+id/header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <FrameLayout
         android:id="@+id/animContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_above="@id/finish_text"
-        android:paddingTop="80dp"/>
+        android:gravity="center_horizontal"
+        android:paddingBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="@id/finish_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/finish_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/navigation_bar"
         android:paddingLeft="@dimen/content_margin_left"
         android:paddingRight="@dimen/content_margin_left"
         android:paddingBottom="80dp"
         android:textSize="18sp"
         android:text="@string/finish_summary"
-        style="PageSummaryText"/>
+        app:layout_constraintBottom_toTopOf="@id/navigation_bar"
+        style="PageSummaryText" />
 
         <com.google.android.setupdesign.view.NavigationBar
             android:id="@+id/navigation_bar"
-            style="@style/SudNavBarTheme"
             android:gravity="bottom"
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/sud_navbar_height" />
+            android:layout_height="@dimen/sud_navbar_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/SudNavBarTheme" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

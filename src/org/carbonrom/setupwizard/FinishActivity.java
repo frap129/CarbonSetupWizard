@@ -89,7 +89,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
     	DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
-        RelativeLayout root = findViewById(R.id.root);
         mContent = findViewById(R.id.animContainer);
         mContent.setBackgroundColor(CLEAR_BGCOLOR);
 

@@ -17,6 +17,7 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.core_core \
+    androidx-constraintlayout_constraintlayout \
     setupcompat \
     setupdesign
 

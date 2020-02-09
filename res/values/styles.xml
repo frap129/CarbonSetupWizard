@@ -59,7 +59,7 @@
 
     <style name="WelcomeTitle">
         <item name="android:id">@android:id/title</item>
-        <item name="android:textSize">40sp</item>
+        <item name="android:textSize">38sp</item>
         <item name="android:textColor">@color/welcome_accent</item>
     </style>
 
